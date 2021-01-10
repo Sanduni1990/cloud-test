@@ -36,6 +36,7 @@ spec:
   selector:
     app: knote
   ports:
-    - port: 80
-      targetPort: 8080
-  type: LoadBalancer
+    - nodePort: 32223
+      port: 80
+      targetPort: 80
+  type: NodePort

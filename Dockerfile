@@ -1,5 +1,5 @@
 FROM openjdk:8u212-jdk-slim
 ENV PORT 8080
-COPY /home/knote-java/target/*.jar /opt/app.jar
+COPY knote-java-master/*.jar /opt/app.jar
 WORKDIR /opt
 ENTRYPOINT exec java $JAVA_OPTS -jar app.jar

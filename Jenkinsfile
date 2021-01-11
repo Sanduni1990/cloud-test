@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "192.168.99.100:5000/msc"
+    registry = "sanduni/knote"
     dockerImage = ""
   }
 
@@ -26,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "" ) {
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub' ) {
             dockerImage.push()
           }
         }

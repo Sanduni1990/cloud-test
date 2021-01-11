@@ -14,6 +14,11 @@ pipeline {
         git 'https://github.com/Sanduni1990/cloud-test.git'
       }
     }
+    stage('Build Source') {
+      steps {
+        sh 'mvn clean install spring-boot:run'
+      }
+    }
 
     stage('Build image') {
       steps{

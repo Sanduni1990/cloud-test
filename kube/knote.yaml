@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: 192.168.99.100:5000/sanduni/knote:1
+          image: sanduni/knote:1.0.0
           ports:
             - containerPort: 8080
           env:

@@ -49,7 +49,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          sh 'kubectl apply -f kube/knote.yaml'
+          sh '/usr/local/bin/kubectl apply -f kube/knote.yaml'
         }
       }
     }

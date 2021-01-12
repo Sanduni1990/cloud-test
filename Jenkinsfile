@@ -6,17 +6,7 @@ pipeline {
   }
 
   agent any
-  tools { 
-        maven 'Maven 3.0' 
-  }
   stages {
-    stage('Initialize') {
-      steps {
-        sh '''echo "PATH = ${PATH}"
-              echo "M2_HOME = ${M2_HOME}"
-            '''
-      }
-    }
     stage('Checkout Source') {
       steps {
         git 'https://github.com/Sanduni1990/cloud-test.git'
@@ -24,7 +14,7 @@ pipeline {
     }
     stage('Build Source') {
       steps {
-        sh 'mvn clean install spring-boot:run'
+        sh 'mvn clean package'
       }
     }
 

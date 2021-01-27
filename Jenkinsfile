@@ -48,7 +48,9 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-          sh 'kubectl apply -f kube/knote.yaml'
+         sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"'  
+         sh 'chmod u+x ./kubectl'  
+         sh './kubectl apply -f kube/knote.yaml'
       }
     }
 
